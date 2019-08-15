@@ -6,30 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiangxiaoxx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://xiangxiaoxx.github.io/posts/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>深度学习笔记</title>
+      <link>https://xiangxiaoxx.github.io/posts/note/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangxiaoxx.github.io/posts/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://xiangxiaoxx.github.io/posts/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangxiaoxx.github.io/posts/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+      <guid>https://xiangxiaoxx.github.io/posts/note/</guid>
+      <description>正则化 $g(w)=||w||1=\sum\limits{k}|w_i|$  $g(w)=||w||1^2=\sum\limits{k}|w_i^2|$
+L1范数和L2范数 &amp;emsp;&amp;emsp;L1正则化会让参数变得更加稀疏，而L2正则化不会。 &amp;emsp;&amp;emsp;所谓参数变得稀疏是指会有更多参数变为0，这样可达到特征选取的功能。之所以L2正则化不会让参数变得稀疏的原因是，当参数很小时，这个参数的平方基本上就可以忽略了，于是模型不会进一步将这个参数调整为0。
+偏置不需要正则化 &amp;emsp;&amp;emsp;同时，偏置是不应该被正则化的。正则化主要是为了防止过拟合，而过拟合一般表现为模型对于输出的微小改变产生巨大差异，而这主要是某些参数的w过大的原因，偏置对模型的曲率并没有任何贡献（模型的曲率是由w决定的，b对输入进行求导时，是直接约掉的），通过对||w||进行惩罚，才能缓解这种问题。 &amp;emsp;&amp;emsp;对||b||进行惩罚，其实是没有作用的。b对于所有对数据都是一视同仁的，而w会对不同的数据产生不一样的加权。 &amp;emsp;&amp;emsp;网上查了查相关的解释，还发现这是一道面试题。具体问法为，在做正则化过程中，为什么只对权重做正则惩罚，而不对偏置做权重惩罚。 &amp;emsp;&amp;emsp;《deep learning》书上的解释为：
+&amp;gt;The biases typically require less data than the weights to ﬁt accurately. Each weight speciﬁes how two variables interact. Fitting the weight well requires observing both variables in a variety of conditions. Each bias controls only a single variable. This means that we do not induce too much variance by leaving the biases unregularized. Also, regularizing the bias parameter scan introduce a signiﬁcant amount of underﬁtting.</description>
     </item>
     
     <item>
@@ -66,30 +57,6 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       
       <guid>https://xiangxiaoxx.github.io/portfolio/laramod/</guid>
       <description>LaraMod is another modularisation effort to systematically organising a Laravel based project. The idea stems from my struggle to structure a Laravel-based project so that I can work effectively on individual modules whilst keeping Laravel codebase intact as much as possible and also keeping the project&amp;rsquo;s codebase separate from Laravel.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://xiangxiaoxx.github.io/posts/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangxiaoxx.github.io/posts/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://xiangxiaoxx.github.io/posts/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangxiaoxx.github.io/posts/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
   </channel>

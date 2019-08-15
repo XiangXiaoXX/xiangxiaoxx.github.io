@@ -1,11 +1,11 @@
 {
 	"version": 3,
 	"file": "print.css",
-	"sourceRoot": "/Users/xiaoxiang/documents/xiaoxiang",
+	"sourceRoot": "/Users/xiaoxiang/Documents/xiaoxiang",
 	"sources": [
 		"themes/hyde-hyde/assets/scss/print.scss",
-		"../../documents/xiaoxiang/themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",
-		"../../documents/xiaoxiang/themes/hyde-hyde/assets/scss/hyde-hyde/_print.scss"
+		"themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",
+		"themes/hyde-hyde/assets/scss/hyde-hyde/_print.scss"
 	],
 	"sourcesContent": [
 		"@import \"hyde-hyde/variables\";\n@import 'hyde-hyde/print';\n",

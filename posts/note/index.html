@@ -17,19 +17,19 @@
     
     
 
-<title>一点日常 • </title>
+<title>深度学习笔记 • </title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一点日常"/>
-<meta name="twitter:description" content="计算机专业在读硕士， 就读于上海交通大学，电子信息与电气工程学院。 目前的学习方向主要是&#8195;&#8195;情感计算(Affective Computing)，&#8195;&#8195;计算机视觉(Computer Vision)&#8195;&#8195;和深度学习(Deep Learning)。 本科就读于上海大学，上海电影学院数字媒体技术专业。 一直以来都比较喜欢记录生活，于是建立了这个博客。写下自己学习生涯、日常生活的感悟，给未来的自己看。"/>
+<meta name="twitter:title" content="深度学习笔记"/>
+<meta name="twitter:description" content="记录学习过程中的一些容易疏漏的知识点"/>
 
-<meta property="og:title" content="一点日常" />
-<meta property="og:description" content="计算机专业在读硕士， 就读于上海交通大学，电子信息与电气工程学院。 目前的学习方向主要是&#8195;&#8195;情感计算(Affective Computing)，&#8195;&#8195;计算机视觉(Computer Vision)&#8195;&#8195;和深度学习(Deep Learning)。 本科就读于上海大学，上海电影学院数字媒体技术专业。 一直以来都比较喜欢记录生活，于是建立了这个博客。写下自己学习生涯、日常生活的感悟，给未来的自己看。" />
+<meta property="og:title" content="深度学习笔记" />
+<meta property="og:description" content="记录学习过程中的一些容易疏漏的知识点" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiangxiaoxx.github.io/about/" />
-<meta property="article:published_time" content="2019-07-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-07-27T00:00:00+00:00" /><meta property="og:site_name" content="Title" />
+<meta property="og:url" content="https://xiangxiaoxx.github.io/posts/note/" />
+<meta property="article:published_time" content="2019-08-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-15T00:00:00+00:00" /><meta property="og:site_name" content="Title" />
 
 
     
@@ -193,16 +193,39 @@
     
 <article>
   <header>
-    <h1>一点日常</h1>
+    <h1>深度学习笔记</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Jul 27, 2019
+      <i class="fas fa-calendar-alt"></i> Aug 15, 2019
     
     
     
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/%E7%AC%94%E8%AE%B0">笔记</a>
+          
+      
     
     
     <br/>
@@ -214,11 +237,27 @@
   
   
   <div class="post">
-    <p>计算机专业在读硕士，<br/>
-就读于上海交通大学，电子信息与电气工程学院。<br/>
-目前的学习方向主要是<br/>&#8195;&#8195;情感计算(Affective Computing)，<br/>&#8195;&#8195;计算机视觉(Computer Vision)<br/>&#8195;&#8195;和深度学习(Deep Learning)。<br/><br/><br/>
-本科就读于上海大学，上海电影学院数字媒体技术专业。<br/><br/><br/>
-一直以来都比较喜欢记录生活，于是建立了这个博客。写下自己学习生涯、日常生活的感悟，给未来的自己看。<br/></p>
+    
+
+<h3 id="正则化">正则化</h3>
+
+<p>$g(w)=||w||<em>1=\sum\limits</em>{k}|w_i|$ <br/>
+$g(w)=||w||<em>1^2=\sum\limits</em>{k}|w_i^2|$</p>
+
+<h3 id="l1范数和l2范数">L1范数和L2范数</h3>
+
+<p>&emsp;&emsp;L1正则化会让参数变得更加稀疏，而L2正则化不会。<br/>
+&emsp;&emsp;所谓参数变得稀疏是指会有更多参数变为0，这样可达到特征选取的功能。之所以L2正则化不会让参数变得稀疏的原因是，当参数很小时，这个参数的平方基本上就可以忽略了，于是模型不会进一步将这个参数调整为0。<br/><br/></p>
+
+<h4 id="偏置不需要正则化">偏置不需要正则化</h4>
+
+<p>&emsp;&emsp;同时，偏置是不应该被正则化的。正则化主要是为了防止过拟合，而过拟合一般表现为模型对于输出的微小改变产生巨大差异，而这主要是某些参数的w过大的原因，偏置对模型的曲率并没有任何贡献（模型的曲率是由w决定的，b对输入进行求导时，是直接约掉的），通过对||w||进行惩罚，才能缓解这种问题。<br/>
+&emsp;&emsp;对||b||进行惩罚，其实是没有作用的。b对于所有对数据都是一视同仁的，而w会对不同的数据产生不一样的加权。<br/>
+&emsp;&emsp;网上查了查相关的解释，还发现这是一道面试题。具体问法为，在做正则化过程中，为什么只对权重做正则惩罚，而不对偏置做权重惩罚。<br/>
+&emsp;&emsp;《deep learning》书上的解释为：<br>
+&gt;The biases typically require less data than the weights to ﬁt accurately. Each weight speciﬁes how two variables interact. Fitting the weight well requires observing both variables in a variety of conditions. Each bias controls only a single variable. This means that we do not induce too much variance by leaving the biases unregularized. Also, regularizing the bias parameter scan introduce a signiﬁcant amount of underﬁtting.</p>
+
+<p>通常情况下，深度学习中只对网络权重θ添加约束，对偏置项不加约束。主要原因是偏置项一般需要较少的数据就能精确的拟合，不对其正则化也不会引起太大的方差。另外，正则化偏置参数反而可能会引起显著的欠拟合。</p>
 
   </div>
   
